@@ -29,10 +29,11 @@ Apellidos varchar(max) not null,
 Cargo varchar(max) not null,
 );
 create table ingresos(
+idingreso int primary key identity not null,
 idmascota int foreign key (idmascota) references mascota(idmascota) not null,
 idveterinario int foreign key (idveterinario) references veterinario(idveterinario) not null,
 Motivo varchar(max) not null,
-Fechadeingreso date not null,
+Fechadeingreso varchar(max) not null,
 Observaciones varchar(max) not null,
 );
 
@@ -62,6 +63,24 @@ values
 (2,'rayito', 'pitbull',23, 'pequeñ0', 'se venia muriendo'),
 (3,'nacho', 'lobo',34, 'pequeña', 'diente roto'),
 (3,'pepita', 'chiguagua',4, 'pequeña', 'embarazada');
+
+
+insert into ingresos(idmascota, idveterinario, Motivo, Fechadeingreso,Observaciones)
+values 
+(3, 1,'fiebre','2019-02-02','mal estado'),
+(12, 2,'infeccion vocal','2019-06-20','mal estado'),
+(3, 3,'diarrea','2019-02-23','mal estado'),
+(4, 2,'fiebre','2019-02-12','mal estado'),
+(5, 1,'operacion','2019-02-31','mal estado'),
+(6, 1,'fiebre','2019-03-22','mal estado'),
+(7, 4,'pies roto','2019-02-12','mal estado'),
+(8, 3,'fiebre','2019-02-11','mal estado'),
+(9, 2,'fiebre','2019-02-10','mal estado'),
+(10, 1,'infecion ojos','2019-02-8','mal estado'),
+(3, 4,'diarrea','2019-02-7','mal estado'),
+(12, 3,'infeccion','2019-02-6','mal estado'),
+(4, 2,'fiebre','2019-03-5','mal estado'),
+(5, 1,'fiebre','2019-04-6','mal estado');
 
 
 
